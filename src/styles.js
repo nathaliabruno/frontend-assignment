@@ -1,13 +1,23 @@
-const Theme = {
+import { createGlobalStyle } from "styled-components"
+
+const theme = {
   color: {
     background: "#FFFFFF",
     primary: {
       main: "#FDB515",
       contrastText: "#141E35",
+      hover: "#FEDA8A",
+      pressed: "#FEECC4",
     },
     secondary: {
       main: "#1472EC",
       contrastText: "#FFFFFF",
+      hover: "#8CBBF9",
+      pressed: "#C5DDFC",
+    },
+    disabled: {
+      background: "#EDEEF0",
+      color: "#FFFFFF",
     },
     error: "#F54545",
     border: "#898E9A",
@@ -26,4 +36,10 @@ const Theme = {
   },
 }
 
-export default Theme
+export default theme
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+`
