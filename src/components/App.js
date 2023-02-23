@@ -1,7 +1,14 @@
-import logo from './logo.svg';
+import Button from "./Button"
 
 const App = () => (
-	<img src={logo} alt="Timescale" />
+  <div>
+    timescale
+    <div>
+      <Button label="Primary" primary />
+      <Button label="Secondary" />
+      <Button label="disabled" disabled />
+    </div>
+  </div>
 )
 
-export default App;
+export default App
