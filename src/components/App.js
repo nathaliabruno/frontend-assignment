@@ -4,6 +4,8 @@ import TopBar from "./TopBar"
 import ContentWrapper from "./ContentWrapper"
 import styled from "styled-components"
 
+import { useState } from "react"
+
 const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -15,16 +17,23 @@ const Main = styled.main`
   position: relative;
 
 `
-const App = () => (
-  <Main>
-    <TopBar />
-    <ContentWrapper>
-      <Text variant="h1" align="center" style={{ padding: "0 4rem" }}>
-        Let’s sign you up for Timescale Cloud
-      </Text>
-      <Form />
-    </ContentWrapper>
-  </Main>
-)
+const App = () => {
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSuccess = (value) => {
+    setSubmitted(value)
+  }
+  return (
+    <Main>
+      <TopBar />
+      <ContentWrapper>
+        <Text variant="h1" align="center" style={{ padding: "0 4rem" }}>
+          Let’s sign you up for Timescale Cloud
+        </Text>
+        <Form success={(e) => handleSuccess(e)} />
+      </ContentWrapper>
+    </Main>
+  )
+}
 
 export default App
