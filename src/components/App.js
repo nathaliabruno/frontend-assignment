@@ -32,7 +32,7 @@ const App = () => {
           <Success />
         ) : (
           <>
-            <Text variant="h1" align="center" style={{ padding: "0 4rem" }}>
+            <Text variant="h1" align="center" style={{ padding: "0 10%" }}>
               Let’s sign you up for Timescale Cloud
             </Text>
             <Form success={handleSuccess} />
