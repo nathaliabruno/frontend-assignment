@@ -9,4 +9,7 @@ export const Header = styled.header`
   padding: 1rem;
   box-sizing: border-box;
   background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
 `

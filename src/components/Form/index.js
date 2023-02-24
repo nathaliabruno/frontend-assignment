@@ -3,7 +3,7 @@ import Checkbox from "../Checkbox"
 import Input from "../Input"
 import { useForm } from "../../custom-hook"
 
-const Form = () => {
+const Form = ({ success }) => {
   const validationOptions = {
     validations: {
       email: {
@@ -12,7 +12,8 @@ const Form = () => {
           message: "Can not be empty",
         },
         pattern: {
-          value: "^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/",
+          value:
+            "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$",
           message: "Invalid Email",
         },
       },
@@ -22,9 +23,10 @@ const Form = () => {
           message: "Can not be empty",
         },
         pattern: {
-          value: "((?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%?=*&]).{6,})",
+          value:
+            "^((?=.*[d])(?=.*[a-z])(?=.*[A-Z])|(?=.*[a-z])(?=.*[A-Z])(?=.*[^wds])|(?=.*[d])(?=.*[A-Z])(?=.*[^wds])|(?=.*[d])(?=.*[a-z])(?=.*[^wds])).{6,30}$",
           message:
-            "Password most contain 1 number, 1 special character, 1 lowercase letter and 1 uppercase letter, with at least 6 characteres",
+            "Password most contain 1 number, 1 special character and 1 letter with at least 6 characteres",
         },
       },
       checkbox: {
@@ -34,12 +36,11 @@ const Form = () => {
         },
       },
     },
-    onSubmit: () => alert("Submitted"),
+    onSubmit: () => success(true),
   }
 
   const { handleSubmit, handleChange, errors } = useForm(validationOptions)
 
-  console.log(errors)
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -68,7 +69,7 @@ const Form = () => {
           changeHandle={handleChange("checkbox")}
           error={errors?.checkbox}
         />
-        <Button label="Primary" primary />
+        <Button label="Primary" primary fullWidth />
       </form>
     </div>
   )
