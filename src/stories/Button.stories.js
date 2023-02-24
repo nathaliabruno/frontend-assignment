@@ -39,3 +39,9 @@ PrimaryDisabled.args = {
   disabled: true,
   primary: true,
 }
+
+export const PrimaryFull = Template.bind({})
+PrimaryFull.args = {
+  label: "Full Width Button",
+  fullWidth: true,
+}

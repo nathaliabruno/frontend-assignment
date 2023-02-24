@@ -21,7 +21,7 @@ const StyledInputLabel = styled.label`
   color: ${(props) => props.theme.color.navy};
   font-weight: regular;
   line-height: 1.25rem;
-  letter-spacing: -1%;
+  letter-spacing: -1;
 
   &:hover {
     cursor: pointer;

@@ -18,8 +18,9 @@ const Checkbox = ({
 }) => {
   const [checked, setChecked] = useState(false)
 
-  const handleCheckboxChange = () => {
+  const handleCheckboxChange = (e) => {
     setChecked(!checked)
+    changeHandle(e)
   }
   return (
     <WrappedInput {...others}>
@@ -36,7 +37,7 @@ const Checkbox = ({
           {label}
         </StyledInputLabel>
       </CheckboxWrapper>
-      {error && <ErrorText htmlFor={name}>{errorMessage}</ErrorText>}
+      {error && <ErrorText>{errorMessage}</ErrorText>}
     </WrappedInput>
   )
 }

@@ -43,4 +43,13 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Inter', sans-serif;
   }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: regular;
+  }
 `
