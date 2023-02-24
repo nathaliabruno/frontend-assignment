@@ -21,6 +21,7 @@ const theme = {
     },
     error: "#F54545",
     border: "#898E9A",
+    navy: "#141E35",
   },
   font: {
     size: {
