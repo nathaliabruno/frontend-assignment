@@ -5,6 +5,7 @@ import ContentWrapper from "./ContentWrapper"
 import styled from "styled-components"
 
 import { useState } from "react"
+import Success from "./Success"
 
 const Main = styled.main`
   display: flex;
@@ -27,10 +28,16 @@ const App = () => {
     <Main>
       <TopBar />
       <ContentWrapper>
-        <Text variant="h1" align="center" style={{ padding: "0 4rem" }}>
-          Let’s sign you up for Timescale Cloud
-        </Text>
-        <Form success={(e) => handleSuccess(e)} />
+        {submitted ? (
+          <Success />
+        ) : (
+          <>
+            <Text variant="h1" align="center" style={{ padding: "0 4rem" }}>
+              Let’s sign you up for Timescale Cloud
+            </Text>
+            <Form success={handleSuccess} />
+          </>
+        )}
       </ContentWrapper>
     </Main>
   )

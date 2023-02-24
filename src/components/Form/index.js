@@ -3,7 +3,7 @@ import Checkbox from "../Checkbox"
 import Input from "../Input"
 import { useForm } from "../../custom-hook"
 
-const Form = (success) => {
+const Form = ({ success }) => {
   const validationOptions = {
     validations: {
       email: {
@@ -36,7 +36,7 @@ const Form = (success) => {
         },
       },
     },
-    onSubmit: () => success,
+    onSubmit: () => success(true),
   }
 
   const { handleSubmit, handleChange, errors } = useForm(validationOptions)

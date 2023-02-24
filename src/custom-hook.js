@@ -21,7 +21,6 @@ export const useForm = (options) => {
         if (pattern?.value && !RegExp(pattern.value).test(value)) {
           valid = false
           newErrors[key] = pattern.message
-          console.log(RegExp(pattern.value), value)
         }
 
         const custom = validation?.custom
