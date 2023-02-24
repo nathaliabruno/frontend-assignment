@@ -1,6 +1,6 @@
 import Text from "../Text"
 import { ReactComponent as Check } from "../../images/check.svg"
-import { ReactComponent as LeonCar } from "../../images/leon-car.svg"
+import { ReactComponent as EonCar } from "../../images/eon-car.svg"
 
 import { SuccessWrapper } from "./index.style"
 
@@ -22,7 +22,7 @@ const Success = () => {
       >
         Please check your email.
       </Text>
-      <LeonCar />
+      <EonCar />
     </SuccessWrapper>
   )
 }
