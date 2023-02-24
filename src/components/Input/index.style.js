@@ -3,6 +3,7 @@ import styled from "styled-components"
 const WrappedInput = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0.8rem 0;
 `
 
 const StyledInputText = styled.input`
