@@ -12,18 +12,20 @@ const Input = ({
   placeholder,
   error,
   errorMessage,
+  changeHandle,
   ...others
 }) => {
   return (
     <WrappedInput {...others}>
-      <StyledInputLabel for={name}>{label}</StyledInputLabel>
+      <StyledInputLabel htmlFor={name}>{label}</StyledInputLabel>
       <StyledInputText
         id={name}
         type={type}
         placeholder={placeholder}
         error={error}
+        onBlur={changeHandle}
       />
-      {error && <ErrorText>{errorMessage}</ErrorText>}
+      {error && <ErrorText htmlFor={name}>{errorMessage}</ErrorText>}
     </WrappedInput>
   )
 }
