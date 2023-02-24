@@ -44,4 +44,5 @@ export const PrimaryFull = Template.bind({})
 PrimaryFull.args = {
   label: "Full Width Button",
   fullWidth: true,
+  primary: true,
 }
