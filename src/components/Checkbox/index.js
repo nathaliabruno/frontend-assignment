@@ -8,7 +8,14 @@ import {
 
 import { WrappedInput, ErrorText } from "../Input/index.style"
 
-const Checkbox = ({ label, name, error, errorMessage, ...others }) => {
+const Checkbox = ({
+  label,
+  name,
+  error,
+  errorMessage,
+  changeHandle,
+  ...others
+}) => {
   const [checked, setChecked] = useState(false)
 
   const handleCheckboxChange = () => {
@@ -17,7 +24,7 @@ const Checkbox = ({ label, name, error, errorMessage, ...others }) => {
   return (
     <WrappedInput {...others}>
       <CheckboxWrapper>
-        <FakeInputCheckBox for={name} checked={checked} />
+        <FakeInputCheckBox htmlFor={name} checked={checked} error={error} />
         <HiddenCheckbox
           id={name}
           error={error}
@@ -25,11 +32,11 @@ const Checkbox = ({ label, name, error, errorMessage, ...others }) => {
           onChange={handleCheckboxChange}
         />
 
-        <StyledInputLabel checked={checked} for={name}>
+        <StyledInputLabel checked={checked} htmlFor={name}>
           {label}
         </StyledInputLabel>
       </CheckboxWrapper>
-      {error && <ErrorText>{errorMessage}</ErrorText>}
+      {error && <ErrorText htmlFor={name}>{errorMessage}</ErrorText>}
     </WrappedInput>
   )
 }
