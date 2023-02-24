@@ -39,7 +39,6 @@ const Form = () => {
 
   const { handleSubmit, handleChange, errors } = useForm(validationOptions)
 
-  console.log(errors)
   return (
     <div>
       <form onSubmit={handleSubmit}>
