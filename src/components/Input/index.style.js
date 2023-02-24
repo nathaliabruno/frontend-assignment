@@ -3,7 +3,7 @@ import styled from "styled-components"
 const WrappedInput = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0.8rem 0;
+  margin: 1.5rem 0;
 `
 
 const StyledInputText = styled.input`
@@ -30,7 +30,7 @@ const StyledInputLabel = styled.label`
   color: ${(props) => props.theme.color.navy};
   font-weight: bold;
   line-height: 1.5rem;
-  letter-spacing: -1%;
+  letter-spacing: -1;
   display: block;
 `
 

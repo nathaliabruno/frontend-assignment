@@ -12,11 +12,13 @@ const StyledButton = styled.button`
   border: none;
   font-size: 1rem;
   line-height: 1.625rem;
-  letter-spacing: -1%;
+  letter-spacing: -1;
   font-weight: bold;
   padding: 0.5rem 5rem;
   transition: background 0.3s ease;
-  willchange: background;
+  will-change: background;
+  display: inline-block;
+  width: ${(props) => (props.fullWidth ? "100%" : "auto")};
 
   &:hover {
     background-color: ${(props) =>

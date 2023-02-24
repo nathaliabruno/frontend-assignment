@@ -67,7 +67,7 @@ const Form = () => {
           changeHandle={handleChange("checkbox")}
           error={errors?.checkbox}
         />
-        <Button label="Primary" primary />
+        <Button label="Primary" primary fullWidth />
       </form>
     </div>
   )
