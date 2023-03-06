@@ -69,7 +69,7 @@ const Form = ({ success }) => {
           changeHandle={handleChange("checkbox")}
           error={errors?.checkbox}
         />
-        <Button label="Primary" primary fullWidth />
+        <Button label="Sign up" primary fullWidth />
       </form>
     </div>
   )
